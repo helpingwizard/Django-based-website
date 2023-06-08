@@ -2,15 +2,51 @@
 
 {% block content %}
 
-<div class="col-md-6 offset-md-3">
+
 
 {% if user.is_authenticated %}
 
-<h1>Hello World</h1>
+<h1>Spot your professor..</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Class</th>
+      <th scope="col">Timings</th>
+      <th scope="col">Created At</th>
+      <th scope="col">ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+{% if records %}
+    {% for record in records %}
+    <tr>
+        <td>{{ record.first_name}}
+        {{ record.last_name}}</td>
+        <td>{{ record.my_class}}</td>
+        <td>{{ record.timing}}</td>
+        <td>{{record.created_at}}</td>
+        <td><a href="{% url 'record' record.id %}">{{ record.id }}</a></td>
+
+    </tr>
+    {% endfor %}
+{% endif %}    
+
+
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
 
 {% else %}
 
-
+<div class="col-md-6 offset-md-3">
 <h1> Login </h1>
 
 <form method="post" action = "{% url 'home' %}">
@@ -28,8 +64,36 @@
   <br/>
   <button type="submit" class="btn btn-secondary">Login</button>
 </form>
-
 </div>
+<br/>
+<br/>
+<h1>Spot your professor..</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Class</th>
+      <th scope="col">Timings</th>
+      <th scope="col">Created At</th>
+      <th scope="col">ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+{% if records %}
+    {% for record in records %}
+    <tr>
+        <td>{{ record.first_name}}
+        {{ record.last_name}}</td>
+        <td>{{ record.my_class}}</td>
+        <td>{{ record.timing}}</td>
+        <td>{{record.created_at}}</td>
+        <td>{{record.id}}</td>
+    </tr>
+    {% endfor %}
+{% endif %}    
+
 
 {% endif %}
 
