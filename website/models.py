@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Record(models.Model):
@@ -11,3 +12,7 @@ class Record(models.Model):
    
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+
+
+
