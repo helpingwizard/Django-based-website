@@ -49,5 +49,10 @@ def prof_record1(request, pk):
 
         return redirect('home')
 
+def delete_record(request,pk):
+    delete_it = Record.objects.get(id=pk)
+    delete_it.delete()
+    messages.success(request,"Record Deleted Sucessfully...")
+    return redirect('home')
 
 

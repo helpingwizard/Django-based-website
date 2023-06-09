@@ -2,8 +2,37 @@
 
 {% block content %}
 
-<h1>2</h1>
+<div class="card">
+  <div class="card-header">
+        {{ prof_record.first_name}}
+        {{ prof_record.last_name}}
+  </div>
+  <div class="card-body">
+  	 <p class="card-text">
+	  	 	<strong>Class: </strong>{{ prof_record.my_class}}<br/>
+	        <strong>timing: </strong>{{ prof_record.timing}}<br/>
+	       <strong>Created at: </strong> {{prof_record.created_at}}<br/>
+	       <strong>ID: </strong> {{ prof_record.id }}<br/>
+    </p>    
 
-{{ prof_record }}
+    
+    
+    
+  </div>
+</div>
+
+<br/><br/>
+
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'delete_record' prof_record.id %}" class="btn btn-danger">Delete</a>
+
+
+        {{ prof_record.first_name}}
+        {{ prof_record.last_name}}
+        {{ prof_record.my_class}}
+        {{ prof_record.timing}}
+        {{prof_record.created_at}}
+        {{ prof_record.id }}
+
 
 {% endblock %}
