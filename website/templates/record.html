@@ -4,20 +4,15 @@
 
 <div class="card">
   <div class="card-header">
-        {{ prof_record.first_name}}
-        {{ prof_record.last_name}}
+    {{ prof_record.first_name }} {{ prof_record.last_name }}
   </div>
   <div class="card-body">
-  	 <p class="card-text">
-	  	 	<strong>Class: </strong>{{ prof_record.my_class}}<br/>
-	        <strong>timing: </strong>{{ prof_record.timing}}<br/>
-	       <strong>Created at: </strong> {{prof_record.created_at}}<br/>
-	       <strong>ID: </strong> {{ prof_record.id }}<br/>
+    <p class="card-text">
+      <strong>Class:</strong> {{ prof_record.my_class }}<br/>
+      <strong>Timing:</strong> {{ prof_record.timing }}<br/>
+      <strong>Created at:</strong> {{ prof_record.created_at }}<br/>
+      <strong>ID:</strong> {{ prof_record.id }}<br/>
     </p>    
-
-    
-    
-    
   </div>
 </div>
 
@@ -25,14 +20,6 @@
 
 <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
 <a href="{% url 'delete_record' prof_record.id %}" class="btn btn-danger">Delete</a>
-
-
-        {{ prof_record.first_name}}
-        {{ prof_record.last_name}}
-        {{ prof_record.my_class}}
-        {{ prof_record.timing}}
-        {{prof_record.created_at}}
-        {{ prof_record.id }}
-
+<a href="{% url 'update_record' prof_record.id %}" class="btn btn-secondary">Update</a>
 
 {% endblock %}

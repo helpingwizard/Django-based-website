@@ -6,14 +6,15 @@
 <h1>Add Record</h1>
 <br/>
 
-<form method="post" action="{% url 'add_record' %}">
+<form method="post">
     {% csrf_token %}
 
     {{ form.as_p }}
 
     <br/>
-    <button type="submit" class="btn btn-secondary">Add Record</button>
+    <button type="submit" class="btn btn-secondary">Update Record</button>
     <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
 </form>
 
+</div>
 {% endblock %}
